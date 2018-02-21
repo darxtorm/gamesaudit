@@ -27,7 +27,7 @@ du -l 1 -c "c:\games" | more +1 | findstr /v \"c:\\games\\\" >> %OUTPUTFOLDER%\g
 
 2. games folder which contains another games folder (D:\Games1\Games2\) inside it; findstr bit must include second folder, this folder's name is CASE SENSITIVE; you will need to specify second folder in another 'du' line as a game folder itself
 
-du -l 1 -c "d:\games1" | more +1 | findstr /v \"d:\\games\\\" | findstr /v \"d:\games1\Games2\\\" >> %OUTPUTFOLDER%\games_usage.csv
+du -l 1 -c "d:\games1" | more +1 | findstr /v \"d:\\games1\\\" | findstr /v \"d:\games1\Games2\\\" >> %OUTPUTFOLDER%\games_usage.csv
 
 3. single game folder; doesn't need any findstr part
 
