@@ -21,14 +21,14 @@ ALL following 'du' lines must use two >> symbols and include | more +1 | as per 
 if all your games are in a few folders, this is easy. everything should be in lowercase unless noted otherwise!
 three examples below:
 
-games folder which only contains named games as subfolders; put path inbetween quotes "" ; path uses \\ between each folder in the findstr bit
+1. games folder which only contains named games as subfolders; put path inbetween quotes "" ; path uses \\ between each folder in the findstr bit
 
 du -l 1 -c "c:\games" | more +1 | findstr /v \"c:\\games\\\" >> %OUTPUTFOLDER%\games_usage.csv
 
-games folder which contains another games folder (D:\Games1\Games2\) inside it; findstr bit must include second folder, this folder's name is CASE SENSITIVE; you will need to specify second folder in another 'du' line as a game folder itself
+2. games folder which contains another games folder (D:\Games1\Games2\) inside it; findstr bit must include second folder, this folder's name is CASE SENSITIVE; you will need to specify second folder in another 'du' line as a game folder itself
 
 du -l 1 -c "d:\games1" | more +1 | findstr /v \"d:\\games\\\" | findstr /v \"d:\games1\Games2\\\" >> %OUTPUTFOLDER%\games_usage.csv
 
-single game folder; doesn't need any findstr part
+3. single game folder; doesn't need any findstr part
 
 du -l 0 -c "c:\program files (x86)\overwatch" >> %OUTPUTFOLDER%\games_usage.csv
